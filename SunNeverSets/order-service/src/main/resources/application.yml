@@ -1,0 +1,33 @@
+server:
+  port: 3001
+spring:
+  application:
+    name: order-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/mi?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: tda6060g
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 1000
+    database: 0
+    lettuce:
+      pool:
+        max-active: 15
+        max-wait: 5000ms
+        max-idle: 10
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:2500/eureka/
+
+#支付宝
+alipay:
+  appId: 9021000137647380
+  appPrivateKey: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCfnWUOVkhq21FNT+rYSP9wNaRO1MaT9WidjCJMUNcBGEbxz66gnYJHO8sJBv5GLwrbOBRwKjJNnRhAuDGQ+Ldmdq8oJdovQmrqRLnCg+DFNZfhJDVfZH4bSJMz9LgPNn8vBfejhrx5yR0kPdK6Bz3HiX4cAK1U8hdtzYe7ggjfF1X2QlLIgBQam0n/fGFWDCA2Hwnj41pLsHVDY9TBeJp3KKiOnQRFJBlOwILSEO4CY/YZlOLUK/WeZAxm1CMYwW8G00DCYxH2sMhHNHrqAePcseTuzc1HnPeV6i8sbxT28dX2va2sPip+Tv0MREQyCNeaQ9NQd91p/uIYfrEbKjgFAgMBAAECggEBAJ0KXsMcYWPBJNzMJGNobuoX3PEyp64rZiKcHaK4ZtHM8QA5NbcRQXyUd88J8mNbJXNKWdGBsrxqM9J5Z0sbalaFrw/xLhoRXt/ffmTDHALsF+KLnXedh/WQEkSsIevV0oyRcnSRvB6WoPVnXk1pkn8f59PlVqSdDDAcZ880wUW8QZhl53TapO+MyybzTQ6o8VFNMNKVHvNtOP1xC42eVDBoG33pgphyxvwJFZK1rePjCsG6gUjz/X50XrvarZQSHv2EOFqJlwAqj7PKKu3lSv0ROjl+kdlz0tEPIXG3DhjOBe4DS712SSCo42YZlVYFUlBwgaqDquUx6G1rEXle4AECgYEA1ZFrDTcWCCeIOxdTljJHzBlxV1PEjuPamk1FH8PpsFO/HG2AQDUtS1scLLqv29fMUKkPrtWkJ0kmQbqD8O6xhq63y6mVLdBTXXqumeRk8jZNsX9qk0I2mVLe8tDAdTuQgP2OJnZ3M2UeTVHx0nDRHXPM6Kvd0nrqK1R4NXs+CsUCgYEAv1PJbJehl0eeEZ+fHzy1NcVGp2I7kIyA8ENTJEoAXEuS6uHzOCz5F/YefFlmJoT7kv+ue0EEy3b3CZ/DAlYFioVzSYZPqexs2pthS2RTaXIwp4N9WnMlZf4Mr9czpJ+zBzx76IZxsMAPALlx19a1uY5ANuQaqA5Y4lh3Th/LTEECgYBxlILgZll7QLr84iz8BgWVEDrs/InejGNoCIwolqKjugY7cijw/Nb36p6TUz3Pp3brtt22V7yTgB2ueylMa0VSoXzx/WBvGwoa/vH4ujTNc//h1Cez5VTwOdiEPmz8bA8v6qk832gJl0+EQ35eMs2j4kApxa2VEPWU0bmUh9S5GQKBgDLTjVTdyz2m9uTzpI/lzrXkHGrm+6/gw3gQSov/ZK0gHn1rXPN1bw7ggSTDkxF0jmh0p+NyWFW82s+hs2pxc7Ni1EeZ+JvJhPlmAajHlCkU/rvhgHGA2VSI8tHbt4pqKmMnvDr/TECKJPIqUYXnMguDMKfkXPh8JzyqB7enVpiBAoGAPGayHbeRehpWU2uPpIwPBv6VLBewr1xBe5wnyBRNF1atB1KN/gNnY3Y4XMw3fiUaSqQwE3PRCWdezloeZ4Bqw/l4+Z9g5qrxT8Rdn2uke3btncYDcIL5rrLX4Qbtx9yFuJcta9LtCr0J2XQ/VTUjCJn4nJcHHCzd9/vm+osuUiQ=
+  alipayPublicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAulamewGqLOdklx49oGn/oZjUbry3zEMj8hYoS40QGjD0Yr2FvDCX9DPPbEotTLMK8xadJaLCnvfQZ6sDpOVFM3v84NVvC/ItVFgQlizY8H+xpIBPQliLCIBHOb21HTcFy1qndq9W/JpISdmAYzoeX+qC2JQLqNGRNpn0LarGDhiLN9RNJZZ8MhOWwYzU5990zTTsuBO/AW/zAC/ZyUcclv0QHP4R9fBLvtrokCQIbBtr7ICT9ysAR94U16KwVZWcOjXNh25wNoeQoOfZQXo0WQs+3RoKJi8fmBboQttXMq+eRB2A5QLuSE+k1WcYjJNe8i25eHiWRQSS2cx3cMFADwIDAQAB
+  notifyUrl: http://96ac4y.natappfree.cc/alipay/notify
+  returnUrl: http://localhost:8080/#/order/

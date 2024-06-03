@@ -1,0 +1,25 @@
+server:
+  port: 2750
+spring:
+  application:
+    name: product-service-provider
+  datasource:
+    url: jdbc:mysql://localhost:3306/mi?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: tda6060g
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 1000
+    database: 0
+    lettuce:
+      pool:
+        max-active: 15
+        max-wait: 5000ms
+        max-idle: 10
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:2500/eureka/

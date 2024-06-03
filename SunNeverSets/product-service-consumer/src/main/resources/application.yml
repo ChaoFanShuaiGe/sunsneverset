@@ -1,0 +1,13 @@
+server:
+  port: 2751
+spring:
+  application:
+    name: product-service-consumer
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:2500/eureka/
+feign:
+  circuitbreaker:
+    enabled: true
